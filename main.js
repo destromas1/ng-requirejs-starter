@@ -31,4 +31,18 @@ require.config({
 });
 
 
+/**
+ * bootstraps angular onto the window.document node
+ */
+require([
+    'angular',
+    'app/js/app',
+    '_'
+], function (angular , app) {
+
+    angular.element(document).ready(function() {
+        angular.bootstrap(document, [app['name']]);
+        console.log('successfully bootstrapped');
+    });
+});
 
