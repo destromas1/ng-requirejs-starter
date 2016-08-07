@@ -3,9 +3,7 @@
 
 require([
     'angular',
-    'app/js/app',
-    'app/js/currency-directive',
-    'app/js/phone-directive'
+    'app/js/app'
 ], function (angular , app) {
 
     var dashboardCtrl = function ($scope , $state, $stateParams) {
