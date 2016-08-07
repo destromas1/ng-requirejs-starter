@@ -19,7 +19,15 @@ function (angular) {
               
     testApp.config(function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvider, $provide) {
   
-        
+        testApp.register =
+            {
+                controller: $controllerProvider.register,
+                directive: $compileProvider.directive,
+                factory: $provide.factory,
+                service: $provide.service
+            };
+
+
         $urlRouterProvider.otherwise("/home");
             
         $stateProvider.state('home', {
@@ -27,7 +35,7 @@ function (angular) {
             url: '/',
             templateUrl: 'partials/home.html',
             controller: 'homeCtrl'
-        })
+        });
     
         $stateProvider.state('app', {
             abstract: true,
